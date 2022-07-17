@@ -1,20 +1,28 @@
-import 'package:pawradise/pages/grooming_page.dart';
-import 'package:pawradise/pages/vet_page.dart';
+//import 'package:pawradise/pages/grooming_page.dart';
+//import 'package:pawradise/pages/vet_page.dart';
 import 'package:pawradise/utils/layouts.dart';
 import 'package:pawradise/utils/styles.dart';
 import 'package:pawradise/widgets/animated_title.dart';
 import 'package:pawradise/widgets/pet_card.dart';
-import 'package:pawradise/widgets/stories_section.dart';
+//import 'package:pawradise/widgets/stories_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
- 
+ _launchCaller() async {
+    var url = Uri.parse("https://discord.gg/X6csDS29");
+    if (await canLaunchUrl(url)) {
+       await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }   
+}
   @override
   Widget build(BuildContext context) {
-    List navItems = [
+    /* List navItems = [
       {
         'text': 'Adopt',
         'icon': 'assets/nav_icons/dog_icon.svg',
@@ -33,7 +41,7 @@ class Home extends StatelessWidget {
         'text': 'Help',
         'icon': 'assets/nav_icons/help_icon.svg',
       },
-    ];
+    ]; */
     final size = Layouts.getSize(context);
     return Scaffold(
       body: ListView(
@@ -107,10 +115,11 @@ class Home extends StatelessWidget {
             ],
           ), 
           */
+          const Gap(35),
           Text(
                                 'Pawradise🐾',
                                 style: TextStyle(
-                                    fontSize: 35,
+                                    fontSize: 38,
                                     fontWeight: FontWeight.bold,
                                     color: Styles.blackColor,
                                     height: 1),
@@ -120,7 +129,7 @@ class Home extends StatelessWidget {
           const Gap(10),
           Row(
             children: const [
-              PetCard(petPath: 'assets/svg/cat1.svg', petName: 'Cat Adoption'),
+              PetCard2(petPath: 'assets/svg/cat1.svg', petName: 'Cat Adoption'),
               Gap(28),
               PetCard(
                 petPath: 'assets/svg/dog1.svg',
@@ -132,6 +141,15 @@ class Home extends StatelessWidget {
           const Gap(25),
           const AnimatedTitle(title: 'Community'),
           const Gap(10),
+      
+          InkWell(
+        onTap: (){
+          _launchCaller();
+        } ,/* () {
+           Navigator.push(
+              context, MaterialPageRoute(builder: (_) => const HomePage2())); 
+        }, */
+        child:
           TweenAnimationBuilder<double>(
               tween: Tween(begin: 0, end: 1),
               duration: const Duration(milliseconds: 500),
@@ -208,12 +226,14 @@ class Home extends StatelessWidget {
               );
             }
           ),
+          ),
           /* const Gap(25),
           const AnimatedTitle(title: 'Stories'),
           const Gap(10),
           const StoriesSection() */
         ],
       ),
+      /*
       bottomNavigationBar: Container(
         height: 85,
         decoration: BoxDecoration(
@@ -254,6 +274,8 @@ class Home extends StatelessWidget {
           }).toList(),
         ),
       ),
+      */
     ); 
+    
   }
 }

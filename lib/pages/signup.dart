@@ -5,6 +5,8 @@ import 'package:pawradise/utils/account_check.dart';
 import 'package:pawradise/widgets/loginsignup.dart';
 import 'package:pawradise/pages/home.dart';
 import 'package:form_field_validator/form_field_validator.dart';
+import 'package:pawradise/screens/root_app.dart';
+
 
 const kPrimaryColor = Color(0xFF6F35A5);
 const kPrimaryLightColor = Color(0xFFF1E6FF);
@@ -131,7 +133,9 @@ class _SignUpFormState extends State<SignUpForm> {
           ElevatedButton(
             onPressed: () {
                 Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => const Home()));
+                  context, //MaterialPageRoute(builder: (_) => const Home()));
+                          MaterialPageRoute(builder: (_) => const RootApp()));
+
             },
             child: Text("Sign Up".toUpperCase()),
           ),
