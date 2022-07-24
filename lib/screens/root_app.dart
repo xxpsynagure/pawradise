@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:pawradise/pages/shelter.dart';
-import 'package:pawradise/screens/chat.dart';
-import 'package:pawradise/screens/home.dart';
 import 'package:pawradise/theme/color.dart';
 import 'package:pawradise/utils/constant.dart';
 import 'package:pawradise/widgets/bottombar_item.dart';
@@ -30,7 +28,7 @@ class _RootAppState extends State<RootApp>  with TickerProviderStateMixin {
       "page" : const GroomingPage(),
       "title" : ""
     },
-    {
+    /* {
       "icon" : "assets/icons/chat-border.svg",
       "active_icon" : "assets/icons/chat.svg",
       "page" : const ChatPage(),
@@ -43,7 +41,7 @@ class _RootAppState extends State<RootApp>  with TickerProviderStateMixin {
         child: Center(child: Text("Setting Page"),),
       ),
       "title" : ""
-    },
+    }, */
   ];
 //====== set animation=====
    late final AnimationController _controller = AnimationController(

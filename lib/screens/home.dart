@@ -2,10 +2,18 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:pawradise/theme/color.dart';
 import 'package:pawradise/utils/data.dart';
-import 'package:pawradise/widgets/category_item.dart';
-import 'package:pawradise/widgets/notification_box.dart';
 import 'package:pawradise/widgets/pet_item.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+
+_launchurl() async {
+    var url = Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLSdfakTbmoC65Gl0uC-RNm3QN-KguHs9ClXziu84pgOQdsSUqw/viewform?usp=sf_link");
+    if (await canLaunchUrl(url)) {
+       await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }   
+}
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
 
@@ -14,6 +22,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +41,21 @@ class _HomePageState extends State<HomePage> {
               (context, index) => buildBody(),
               childCount: 1,
             ),
-          )
+          ),
+          /* ElevatedButton(
+                  onPressed: _launchurl,
+                  style: ButtonStyle(
+                    padding:
+                        MaterialStateProperty.all(const EdgeInsets.all(5.0)),
+                    textStyle: MaterialStateProperty.all(
+                      const TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  child: const Text('Here'),
+                ), */
         ],
-      )
+      ),
+      
     );
   }
 
@@ -130,7 +151,7 @@ class _HomePageState extends State<HomePage> {
             data: dogs[index], 
             width:  width,
             onTap: (){
-              
+              _launchurl();
             },
             onFavoriteTap: (){
               setState(() {
@@ -169,9 +190,11 @@ class _HomePage2State extends State<HomePage2> {
               (context, index) => buildBody(),
               childCount: 1,
             ),
-          )
+          ),
+          
         ],
-      )
+      ),
+      
     );
   }
 
@@ -218,7 +241,7 @@ class _HomePage2State extends State<HomePage2> {
             data: cats[index], 
             width:  width,
             onTap: (){
-              
+              _launchurl();
             },
             onFavoriteTap: (){
               setState(() {

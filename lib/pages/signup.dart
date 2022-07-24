@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pawradise/pages/login.dart';
 import 'package:pawradise/utils/account_check.dart';
 import 'package:pawradise/widgets/loginsignup.dart';
-import 'package:pawradise/pages/home.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:pawradise/screens/root_app.dart';
 

@@ -277,13 +277,13 @@ List cats =[
   },
   {
     "image" : "https://images.unsplash.com/photo-1598463166228-c0f90d180918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=525&q=80",
-    "name" : "Ruwee",
-    "location" : "Kadri, Mangaluru",
+    "name" : "Cookie",
+    "location" : "Kulai, Mangaluru",
     "is_favorited": false,
     "id": "pid001",
     "sex": "Female",
     "age": "8 Months",
-    "color": "White-Brown",
+    "color": "Brown",
   },
 ];
 var chats = [
@@ -349,3 +349,8 @@ var chats = [
   },
 ];
  
+var login = {
+  'pragnya.nagure2002@gmail.com' : 'helloworld',
+  'pavitra@gmail.com' : 'helloworld',
+  'pragnya.nagure@rediffmail.com' : 'helloworld',
+};

@@ -62,7 +62,10 @@ class _PetCardState extends State<PetCard> {
                       scale: value,
                         curve: Curves.bounceInOut,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                            context, MaterialPageRoute(builder: (_) => const HomePage()));
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -156,7 +159,10 @@ class _PetCard2State extends State<PetCard2> {
                       scale: value,
                         curve: Curves.bounceInOut,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                            context, MaterialPageRoute(builder: (_) => const HomePage2()));
+                          },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [

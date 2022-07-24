@@ -1,8 +1,6 @@
-import 'package:pawradise/models/package.dart';
 import 'package:pawradise/utils/layouts.dart';
 import 'package:pawradise/utils/styles.dart';
 import 'package:pawradise/widgets/back_button.dart';
-import 'package:pawradise/widgets/package_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
